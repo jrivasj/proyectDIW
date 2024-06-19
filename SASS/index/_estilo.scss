@@ -1,0 +1,52 @@
+@use '../base/colores' as c;
+@use '../base/mixins' as m;
+
+@import url('https://fonts.googleapis.com/css?family=Sriracha&display=swap');
+
+body {
+  font-family: 'Lato', sans-serif;
+
+  h1 {
+    font-family: 'Sriracha', cursive;
+  }
+}
+
+.carrito {
+  position: relative;
+  left: 25%;
+}
+
+.enlaces {
+  p {
+    font-size: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    color: c.$negro;
+
+    &:hover {
+      color: c.$azul;
+      font-size: 16px;
+    }
+  }
+}
+
+@include m.desktop {
+  .carrito {
+    position: relative;
+    left: auto;
+  }
+}
+
+@include m.mobile {
+  .git {
+    position: relative;
+    left: -70px;
+  }
+
+  .carrito {
+    left: auto;
+  }
+}
+

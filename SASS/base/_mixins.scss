@@ -1,0 +1,85 @@
+@use 'colores' as c;
+@use 'sass:color';
+
+@mixin box-sizing($box_model) {
+    box-sizing: $box_model;
+}
+
+@mixin btn($bgcolor,$fgcolor){
+
+    background-color: $bgcolor;
+    border: 0;
+    border-radius: 1rem;
+    color: $fgcolor;
+    // display: block;
+    font-weight: 700;
+    padding: 1.2rem 3rem;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    transition: background-color 0.4s ease;
+
+    &:hover{
+        background-color: color.adjust($bgcolor, $lightness: -15%);
+    }
+
+    @include tablet{
+        width: auto;
+    }
+}
+
+@mixin btn2($bgcolor,$fgcolor){
+    
+    width: 100%;
+    padding: 5px;
+    background-color: $bgcolor;
+    color: $fgcolor;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 1000;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.4s ease;
+
+    &:hover{
+        background-color: color.adjust($bgcolor, $lightness: -15%);
+    }
+
+    @include tablet{
+        width: auto;
+    }
+}
+// //Crear Grid
+@mixin createGrid ($columns,$gap){
+    display: grid;
+        grid-template-columns: repeat($columns, 1fr);
+        gap: $gap;
+    
+}
+
+// Flex con alineación al centro
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//Media-queries
+@mixin desktop {
+    @media screen and (min-width: 1199px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 800px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (min-width: 600px) {
+        @content;
+    }
+}

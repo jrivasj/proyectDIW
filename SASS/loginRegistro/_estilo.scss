@@ -1,0 +1,93 @@
+@use '../base/colores' as c;
+@use '../base/mixins' as m;
+
+.panel-login {
+    > .panel-heading {
+      color: c.$azul_oscuro;
+      background-color: c.$main_color;
+      border-color: c.$main_color;
+      text-align: center;
+  
+      a {
+        text-decoration: none;
+        color: c.$gris;
+        font-weight: bold;
+        font-size: 15px;
+        transition: all 0.1s linear;
+  
+        &.active {
+          color: c.$azul_claro2;
+          font-size: 18px;
+        }
+      }
+  
+      hr {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        clear: both;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, c.$negro, rgba(0, 0, 0, 0.15), c.$negro);
+      }
+    }
+  
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      height: 45px;
+      border: 1px solid c.$gris_claro;
+      font-size: 16px;
+      transition: all 0.1s linear;
+  
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border-color: c.$gris_claro;
+      }
+    }
+  
+    .btn-login,
+    .btn-register {
+      background-color: c.$azul_claro;
+      outline: none;
+      color: c.$main_color;
+      font-size: 14px;
+      height: auto;
+      font-weight: normal;
+      padding: 14px 0;
+      text-transform: uppercase;
+      border-color: c.$negro;
+  
+      &:hover,
+      &:focus {
+        color: c.$main_color;
+        background-color: c.$azul_claro;
+        border-color: c.$azul_claro;
+      }
+    }
+  
+    .forgot-password {
+      text-decoration: underline;
+      color: #888;
+  
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+        color: c.$gris;
+      }
+    }
+  
+    select {
+      width: 100%;
+    }
+  
+    .date, .number {
+      height: 45px;
+    }
+  
+    .der-new {
+      padding-left: 15px;
+    }
+  }
+  
